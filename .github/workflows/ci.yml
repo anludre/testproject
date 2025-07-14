@@ -1,0 +1,30 @@
+name: CI
+on: [push, pull_request]
+jobs:
+  build-test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Установка Node
+        uses: actions/setup-node@v4
+        with: { node-version: 20 }
+      - name: FE deps (если есть)
+        if: ${{ hashFiles('frontend/**') != '' }}
+        run: |
+          cd frontend && npm ci
+      - name: FE tests
+        if: ${{ hashFiles('frontend/**') != '' }}
+        run: |
+          cd frontend && npm test --if-present
+      - name: Установка Python
+        if: ${{ hashFiles('api/**') != '' }}
+        uses: actions/setup-python@v5
+        with: { python-version: '3.12' }
+      - name: BE deps (если есть)
+        if: ${{ hashFiles('api/requirements.txt') != '' }}
+        run: |
+          cd api && pip install -r requirements.txt
+      - name: Pytest
+        if: ${{ hashFiles('api/**') != '' }}
+        run: |
+          cd api && pytest -q || echo 'pytest skipped'

@@ -1,0 +1,200 @@
+{
+  "version": "v1",
+
+  "research": {
+    "problem": "Традиционная хиромантия субъективна, фрагментирована и не имеет-доступного цифрового UX; результаты сложно хранить и делиться ими.",
+    "service_purpose": "Упростить и структурировать хиромантию в формате Telegram-бота, обеспечив мгновенный (Fast) и расширенный (Deep) AI-анализ ладоней, визуальный отчёт и персональные рекомендации.",
+    "project_name": "PalmAI Bot",
+    "interface_languages": ["ru", "en", "es"],
+    "target_audience": [
+      "18-45 self-help & wellbeing энтузиасты",
+      "HR-специалисты и лайф-коучи",
+      "Фанаты эзотерики / mindfulness"
+    ],
+    "core_functions": [
+      "Загрузка фото одной или обеих рук",
+      "Fast (≈30 сек) / Deep (≈2-3 мин) режимы диагностики",
+      "CV-распознавание ключевых и вспомогательных линий",
+      "Сравнение левой и правой руки",
+      "PDF + PNG отчёт, шаринг прямо из Telegram"
+    ],
+    "retention_kpi": [
+      "DAU / WAU",
+      "% апгрейда Fast→Deep",
+      "Avg reports per user",
+      "Virality-K (shares per user)"
+    ],
+    "competitors": [
+      {
+        "name": "PalmistryHD",
+        "country": "US",
+        "strength": "AR-визуализация",
+        "weakness": "долгий onboarding",
+        "our_usp": "моментальный Telegram-доступ"
+      },
+      {
+        "name": "Cozmic Palm",
+        "country": "IN",
+        "strength": "много статей-обучалок",
+        "weakness": "нет AI-сравнения рук",
+        "our_usp": "AI-сравнение + инфографика"
+      },
+      {
+        "name": "AstroBot",
+        "country": "RU",
+        "strength": "astrology bundle",
+        "weakness": "хиромантия - второстепенный модуль",
+        "our_usp": "узкофокусный palm-expert + better UX"
+      }
+    ],
+    "tam_sam_som": {
+      "tam": "≈ 50 млн людей, интересующихся self-help и эзотерикой",
+      "sam": "≈ 8 млн Telegram-пользователей хиромант-приложений",
+      "som": "≈ 0.4 – 0.6 млн в первые 24 мес."
+    }
+  },
+
+  "business": {
+    "app_type": "freemium Telegram-бот (SaaS)",
+    "distribution_plan": [
+      "Посты в эзотерика-каналах и чатах",
+      "TikTok / Reels с разбором ладоней",
+      "Коллаборации с коучами и HR-блогерами",
+      "Viral share-to-unlock инфографики"
+    ],
+    "pricing_tiers": {
+      "fast": "0 €",
+      "deep_one_off": "3 € / отчёт",
+      "deep_subscription": "7 € / мес, безлимит",
+      "coach_bundle": "49 € / мес, 10 анализов + API"
+    },
+    "billing_console": "Stripe Billing → Telegram Pay → webhook /callback",
+    "unit_economics": {
+      "cac_eur": 3.0,
+      "ltv_eur": 24.0,
+      "payback_months": 2
+    },
+    "product_analytics_roadmap": [
+      "A/B тем отчётов → uplift CTR шаринга",
+      "RFM-сегментация подписчиков",
+      "ML churn-score → триггерные e-mails / push"
+    ]
+  },
+
+  "design": {
+    "tokens_json": "{\n  \"color\": {\n    \"brand-primary\": \"#0DCEB3\",\n    \"brand-secondary\": \"#F4E7D3\",\n    \"text-primary\": \"#1A1A1A\",\n    \"text-secondary\": \"#404040\",\n    \"surface\": \"#FFFFFF\",\n    \"surface-alt\": \"#FAFAFA\",\n    \"error\": \"#D32F2F\"\n  },\n  \"font\": {\n    \"family-base\": \"Inter, sans-serif\",\n    \"size-xs\": \"12\",\n    \"size-sm\": \"14\",\n    \"size-md\": \"16\",\n    \"size-lg\": \"20\",\n    \"size-xl\": \"24\"\n  },\n  \"radius\": {\n    \"sm\": \"4\",\n    \"md\": \"8\",\n    \"lg\": \"16\"\n  },\n  \"shadow\": {\n    \"elevation-1\": \"0 1px 2px rgba(0,0,0,0.04)\",\n    \"elevation-2\": \"0 2px 4px rgba(0,0,0,0.06)\"\n  },\n  \"spacing\": {\n    \"xs\": \"4\",\n    \"sm\": \"8\",\n    \"md\": \"16\",\n    \"lg\": \"24\",\n    \"xl\": \"32\"\n  }\n}",
+
+    "grid_breakpoints": "# Grid & Breakpoints\\n\\n| Name | Min width | Columns | Margin |\\n|------|-----------|---------|--------|\\n| xs   | 0         | 4       | 16px   |\\n| sm   | 480px     | 8       | 24px   |\\n| md   | 768px     | 12      | 32px   |\\n| lg   | 1024px    | 12      | 48px   |",
+
+    "brand_guidelines": "# PalmAI Brand Guidelines\\n\\n## Voice & Tone\\nСпокойный, профессиональный, с ноткой «digital-mystic».\\n\\n## Colour Palette\\n- Brand Primary #0DCEB3\\n- Accent Sand #F4E7D3\\n- Dark Ink #1A1A1A\\n\\n## Typography\\n- Headlines: \"Recoleta\", 700\\n- Body: \"Inter\", 400\\n\\n## Logo Usage\\nМинимальный отступ = 0.5× высоты логотипа. На тёмном фоне использовать светлый вариант.\\n\\n## Imagery\\nЛадони крупным планом, мягкий рассеянный свет.\\n",
+
+    "nav_map": "- Home > Upload\\n- Mode Selector: Fast / Deep\\n- Progress Screen\\n- Report View (share)\\n- History",
+
+    "state_matrix": "- Upload • idle / uploading / error\\n- Analysis • pending / processing / done / failed",
+
+    "onboarding_sequence": "- Slide 1: «Сделайте фото ладони…»\\n- Slide 2: «Выберите Fast / Deep…»\\n- Slide 3: «Получите отчёт и поделитесь!»"
+  },
+
+  "product": {
+    "content_examples": "## Errors\\n- *\"Хмм, фото размыто. Попробуйте при хорошем освещении.\"*\\n- *\"Мы не нашли ладонь на изображении. Снимите руку полностью.\"*\\n\\n## Fast Recommendation Snippet\\n> *«Ваша линия ума показывает высокую гибкость мышления. Совет: попробуйте изучать новые темы раз в месяц, чтобы поддерживать мозг в тонусе.»*\\n\\n## Deep Recommendation Snippet\\n> *«Сильная дуга Меркурия в сочетании с глубокой линией судьбы указывает на потенциал к предпринимательству после 35 лет. Советуем начать изучать основы финансового менеджмента уже сейчас.»*",
+    "moscow": {
+      "must": ["Upload", "Fast/Deep switch", "PDF/PNG report", "Share"],
+      "should": ["History", "Left vs Right compare", "Personal advice feed"],
+      "could": ["Multi-language (≥3)", "In-bot FAQ chat"],
+      "won't": ["Calendar-goals integration (v2+)"]
+    },
+    "north_star_metric": "Retained Deep-users / total users"
+  },
+
+  "frontend": {
+    "stack": "React 18 + TypeScript 5 (Telegram Web App)",
+    "components": [
+      "ImageUploader",
+      "ModeSelector (Fast/Deep)",
+      "ProgressBar",
+      "ReportCard",
+      "HistoryList"
+    ],
+    "edge_states": ["bad-light", "no-hand-detected", "upload-timeout"],
+    "playwright_test_outline": "login → upload → fast report → deep report → share link",
+    "supported_browsers": "Telegram iOS ≥8, Android ≥8, Desktop ≥ 4 (Chromium 113)",
+    "bundle_budget_kb": 250
+  },
+
+  "backend": {
+    "openapi_yaml": "openapi: 3.1.0\\ninfo:\\n  title: PalmAI API\\n  version: 1.0.0\\npaths:\\n  /analyze:\\n    post:\\n      summary: Upload hand images for analysis\\n      requestBody:\\n        required: true\\n        content:\\n          multipart/form-data:\\n            schema:\\n              type: object\\n              properties:\\n                leftHand:\\n                  type: string\\n                  format: binary\\n                rightHand:\\n                  type: string\\n                  format: binary\\n                mode:\\n                  type: string\\n                  enum: [fast, deep]\\n      responses:\\n        '202':\\n          description: Accepted – analysis started\\n          content:\\n            application/json:\\n              schema:\\n                $ref: '#/components/schemas/AnalysisJob'\\n  /report/{jobId}:\\n    get:\\n      summary: Retrieve analysis report\\n      parameters:\\n      - in: path\\n        name: jobId\\n        required: true\\n        schema:\\n          type: string\\n      responses:\\n        '200':\\n          description: Report ready\\n          content:\\n            application/json:\\n              schema:\\n                $ref: '#/components/schemas/Report'\\n  /health:\\n    get:\\n      summary: Health check\\n      responses:\\n        '200':\\n          description: OK\\ncomponents:\\n  schemas:\\n    AnalysisJob:\\n      type: object\\n      properties:\\n        id:\\n          type: string\\n        status:\\n          type: string\\n          enum: [pending, processing, completed, failed]\\n    Report:\\n      type: object\\n      properties:\\n        id:\\n          type: string\\n        leftHandAnalysis:\\n          $ref: '#/components/schemas/HandAnalysis'\\n        rightHandAnalysis:\\n          $ref: '#/components/schemas/HandAnalysis'\\n        recommendations:\\n          type: array\\n          items:\\n            $ref: '#/components/schemas/Recommendation'\\n    HandAnalysis:\\n      type: object\\n      properties:\\n        majorLines:\\n          type: object\\n        minorLines:\\n          type: object\\n    Recommendation:\\n      type: object\\n      properties:\\n        domain:\\n          type: string\\n          enum: [health, career, personal]\\n        text:\\n          type: string\\n",
+
+    "docker_compose": "version: '3.9'\\nservices:\\n  app:\\n    build: .\\n    env_file:\\n      - .env\\n    depends_on:\\n      - cv\\n      - db\\n    ports:\\n      - '8000:8000'\\n  cv:\\n    image: palm-ai/cv-service:latest\\n    environment:\\n      - MODEL_PATH=/models/palm_cnn.tflite\\n    expose:\\n      - '9000'\\n  db:\\n    image: postgres:16\\n    restart: always\\n    environment:\\n      - POSTGRES_USER=palm\\n      - POSTGRES_PASSWORD=pass\\n      - POSTGRES_DB=palmdb\\n    volumes:\\n      - palm-data:/var/lib/postgresql/data\\nvolumes:\\n  palm-data: {}\\n",
+
+    "env_example": "TELEGRAM_BOT_TOKEN=\\nDATABASE_URL=postgresql://palm:pass@db:5432/palmdb\\nCV_SERVICE_URL=http://cv:9000\\nJWT_SECRET=\\n",
+
+    "seed_data": "{\\n  \"users\": [\\n    {\\n      \"id\": \"user-123\",\\n      \"telegramId\": 11111111,\\n      \"createdAt\": \"2025-07-15T00:00:00Z\"\\n    }\\n  ],\\n  \"reports\": [\\n    {\\n      \"id\": \"report-abc\",\\n      \"userId\": \"user-123\",\\n      \"mode\": \"fast\",\\n      \"leftHandAnalysis\": {},\\n      \"rightHandAnalysis\": {},\\n      \"recommendations\": [],\\n      \"createdAt\": \"2025-07-15T00:01:00Z\"\\n    }\\n  ]\\n}",
+
+    "architecture": "FastAPI bot-logic → gRPC CV-service (Go) → Postgres storage; NGINX gateways Telegram webhooks.",
+    "rbac_acl": "JWT + role: {free, subscriber, coach}",
+    "logging": "JSON-lines, stdout → Loki (optionally)",
+    "ci_cd": "GitHub Actions: lint → test → build → Docker Hub → Fly.io deploy"
+  },
+
+  "qa": {
+    "test_data_matrix": "- Освещение: bright / normal / low\\n- Тип руки: 1-hand / 2-hands\\n- Режим: Fast / Deep",
+    "acceptance_checklist": "- Фото ≥ 800×800 px\\n- Отчёт ≤ 180 сек (Deep)\\n- PDF/PNG корректно скачиваются",
+    "browser_device_matrix": "Telegram iOS, Android, Desktop (Win, macOS, Linux)",
+    "negative_scenarios": "- Нет ладони → graceful error\\n- NSFW-контент → block & report\\n- 3G < 400 kbps → retry prompt",
+    "definition_of_done": "Все критичные Test-Cases ✔, линтер ✔, security-scan ✔",
+    "bug_sla": "critical 1 d / major 3 d / minor 7 d",
+    "test_suite_outline": "Playwright E2E 80 % критичных путей, pytest API > 90 % функций"
+  },
+
+  "marketing": {
+    "messaging": "«Ваш потенциал — у вас в руках. Узнайте его за 30 секунд»",
+    "positioning": "Instant AI-palmreading in Telegram",
+    "distribution": ["Telegram-каналы", "TikTok/Reels", "HR-/Coach-партнёрства"],
+    "seo_aso": ["хиромантия", "анализ ладони", "palm reading AI"],
+    "content_calendar": "- Week 1: launch post + reel\\n- Week 2: story «Линия жизни»\\n- … (12 недель расписание)",
+    "referral_landings": "Share report → friend completes Deep → обоим free Deep × 1",
+    "smm_shares": "Auto-generated PNG 1080×1920 w/ brand overlay",
+    "partner_webhooks": "POST /v1/partner/{id}/redeem",
+    "event_stream": "user.analyze.started → user.analyze.completed → user.share.sent"
+  },
+
+  "visionary": {
+    "improvements": [
+      {
+        "idea": "On-device ML inference",
+        "value": "Privacy + offline",
+        "effort": "L",
+        "impact_percent": 18,
+        "benchmark": "Apple CoreML"
+      },
+      {
+        "idea": "Gen-AI personalised storylines (3-, 6-, 12-мес)",
+        "value": "Deeper engagement",
+        "effort": "M",
+        "impact_percent": 22,
+        "benchmark": "Character-AI"
+      },
+      {
+        "idea": "Wearable sync (stress-overlay)",
+        "value": "Holistic health",
+        "effort": "L",
+        "impact_percent": 16,
+        "benchmark": "Garmin Connect"
+      },
+      {
+        "idea": "Zero-shot live-scan в чате",
+        "value": "Frictionless capture",
+        "effort": "M",
+        "impact_percent": 25,
+        "benchmark": "Telegram MiniApp live-scan"
+      },
+      {
+        "idea": "Social leaderboard «Ладонь недели»",
+        "value": "Virality & retention",
+        "effort": "S",
+        "impact_percent": 15,
+        "benchmark": "Strava segments"
+      }
+    ]
+  }
+}

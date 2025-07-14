@@ -1,0 +1,1 @@
+# Grid & Breakpoints\n\n| Name | Min width | Columns | Margin |\n|------|-----------|---------|--------|\n| xs   | 0         | 4       | 16px   |\n| sm   | 480px     | 8       | 24px   |\n| md   | 768px     | 12      | 32px   |\n| lg   | 1024px    | 12      | 48px   |
