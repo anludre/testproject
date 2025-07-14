@@ -18,7 +18,7 @@ export const Card = React.forwardRef<HTMLDivElement, CardProps>(
           className,
         )}
         {...props}
-        data-oid="8fht25q"
+        data-oid="rlqv..0"
       >
         {children}
       </div>
@@ -36,7 +36,7 @@ export const CardHeader = React.forwardRef<
     ref={ref}
     className={cn("flex flex-col space-y-1.5 pb-6", className)}
     {...props}
-    data-oid="jfimn7_"
+    data-oid="hs37heo"
   />
 ));
 
@@ -53,7 +53,7 @@ export const CardTitle = React.forwardRef<
       className,
     )}
     {...props}
-    data-oid="lda-v40"
+    data-oid="hn3jn8x"
   />
 ));
 
@@ -67,7 +67,7 @@ export const CardContent = React.forwardRef<
     ref={ref}
     className={cn("pt-0", className)}
     {...props}
-    data-oid="k15:_es"
+    data-oid="_.kx.df"
   />
 ));
 

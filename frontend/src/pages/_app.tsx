@@ -2,5 +2,5 @@ import type { AppProps } from "next/app";
 import "../styles/globals.css";
 
 export default function App({ Component, pageProps }: AppProps) {
-  return <Component {...pageProps} data-oid="a1vyx05" />;
+  return <Component {...pageProps} data-oid="ih_5qtn" />;
 }
